@@ -22,12 +22,19 @@
                   @csrf
                   <!-- Sección de Checkboxes -->
                   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-                      @for ($i = 1; $i <= 15; $i++)
+                      
                           <div class="flex items-center">
-                              <input id="checkbox{{ $i }}" name="checkboxes[]" type="checkbox" value="opcion{{ $i }}" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                              <label for="checkbox{{ $i }}" class="ml-2 block text-gray-700 dark:text-gray-300">Opción {{ $i }}</label>
+                              <input id="info_general" name="info_general" type="checkbox" value="info_general" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                              <label for="info_general" class="ml-2 block text-gray-700 dark:text-gray-300">Información General</label>
                           </div>
-                      @endfor
+
+                          <div class="flex items-center">
+                              <input id="camara_comercio" name="camara_comercio" type="checkbox" value="camara_comercio" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                              <label for="camara_comercio" class="ml-2 block text-gray-700 dark:text-gray-300">Camara de Comercio</label>
+                          </div>
+
+                          
+                      
                   </div>
 
                   <!-- Campo de Observación -->
