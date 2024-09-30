@@ -20,8 +20,17 @@ return new class extends Migration
             $table->string('documento3');
             $table->string('documento4');
             $table->string('documento5');
-            $table->foreignId('contrato_id')->constrained('contratos')->onDelete('set null');
-            $table->foreignId('user_id')->constrained('users')->onDelete('set null'); // Asumiendo que la tabla de usuarios es 'users'
+          //  $table->foreignId('contrato_id')->constrained('contratos')->onDelete('set null');
+          //  $table->foreignId('user_id')->constrained('users')->onDelete('set null'); // Asumiendo que la tabla de usuarios es 'users'
+            
+            
+            $table->unsignedBigInteger('contrato_id');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('contrato_id')->references('id')->on('contratos')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+           
+            
             $table->timestamps();
         });
     }

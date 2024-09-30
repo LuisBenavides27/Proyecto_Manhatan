@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContratoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ModuloController;
 
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
+/* Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -26,7 +27,18 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+}); */
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    // Ruta actualizada para usar el controlador
+    Route::get('/dashboard', [ContratoController::class, 'index'])->name('dashboard');
 });
 
 Route::get('Modulo', [ModuloController::class, 'index'])
     ->name('Modulo'); 
+
+Route::get('contratos.show/{id}', [ContratoController::class,'show'])->name('contratos.show');
