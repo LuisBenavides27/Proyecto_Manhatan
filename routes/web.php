@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/checkboxes', function () {
+    return view('checkboxes');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,4 +33,7 @@ Route::middleware([
 });
 
 Route::get('Modulo', [ModuloController::class, 'index'])
-    ->name('Modulo'); 
+    ->name('Modulo');
+
+Route::get('Medicamento', [ModuloController::class, 'medicamento'])
+    ->name('Medicamento');

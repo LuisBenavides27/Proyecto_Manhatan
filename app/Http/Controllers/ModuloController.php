@@ -11,4 +11,9 @@ class ModuloController extends Controller
         return view("modulo");
     }
 
+    public function medicamento()
+    {
+        return view("mod_medicamento");
+    }
+
 }

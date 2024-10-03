@@ -11,12 +11,15 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div translate="no" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('Modulo') }}" :active="request()->routeIs('Modulo')">
-                        {{ __('Negociacion') }}
+                        {{ __('Negociación') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('Medicamento') }}" :active="request()->routeIs('Medicamento')">
+                        {{ __('Medicamentos') }}
                     </x-nav-link>
                 </div>
             </div>
